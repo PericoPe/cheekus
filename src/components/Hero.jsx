@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroStoryboardAnimated from './HeroStoryboardAnimated';
+import HeroHeyJackAnimated from './HeroHeyJackAnimated';
 
 const Hero = ({ onLeadClick }) => (
   <section id="hero" style={{
@@ -29,8 +29,8 @@ const Hero = ({ onLeadClick }) => (
         </div>
         {/* Lado derecho: gráfico visual Storyset */}
         <div style={{flex:'1 1 350px', minWidth:260, display:'flex',justifyContent:'center',alignItems:'center',padding:'1.2em 0'}}>
-          {/* Animación tipo video explicativo de Hey Jack! */}
-          <HeroStoryboardAnimated />
+          {/* Nueva animación personalizada Hey Jack! */}
+          <HeroHeyJackAnimated />
         </div>
       </div>
     </div>
