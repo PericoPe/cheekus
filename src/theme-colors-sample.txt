@@ -1,0 +1,17 @@
+# Colores sugeridos extraídos de la imagen StockCake-Red neuronal de automóviles_1745621545.jpg
+
+- Azul profundo: #0a1a2f
+- Azul eléctrico: #1a47e6
+- Celeste: #4ad4ff
+- Naranja: #ff8b3d
+- Gris oscuro: #23272f
+- Blanco azulado: #eaf6ff
+
+Sugerencia de paleta para la landing:
+- Fondo principal: #0a1a2f o #23272f
+- Primario/acento: #1a47e6
+- Secundario: #4ad4ff
+- Detalles/llamados a la acción: #ff8b3d
+- Texto principal: #eaf6ff
+
+¿Te gustaría que adapte toda la landing a esta paleta? Si querés, puedo actualizar las variables CSS para que toda la interfaz combine perfectamente con la imagen.
