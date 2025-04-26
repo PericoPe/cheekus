@@ -11,7 +11,7 @@ const MODELOS_POR_MARCA = {
   'Ford': ['Fiesta', 'Focus', 'EcoSport', 'Ka', 'Ranger', 'Kuga', 'Otro'],
   'Honda': ['Civic', 'Fit', 'HR-V', 'CR-V', 'Otro'],
   'Hyundai': ['Creta', 'Tucson', 'Santa Fe', 'i10', 'Otro'],
-  'Jeep': ['Compass', 'Renegade', 'Cherokee', 'Otro'],
+  'Jeep': ['Compass', 'Renegade', 'Hey Jack!rokee', 'Otro'],
   'Kia': ['Rio', 'Seltos', 'Sorento', 'Sportage', 'Otro'],
   'Nissan': ['Versa', 'March', 'Kicks', 'Frontier', 'Otro'],
   'Peugeot': ['208', '308', '2008', 'Partner', 'Otro'],

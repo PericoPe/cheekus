@@ -22,7 +22,7 @@ const Precios = () => (
         <ul style={{listStyle:'none', padding:0, color:'#b3cfff', textAlign:'left'}}>
           <li>✔️ Soporte 24/7</li>
           <li>✔️ Monitoreo y reportes automáticos</li>
-          <li>✔️ Acceso al bot CheekUS</li>
+          <li>✔️ Acceso al bot Hey Jack!</li>
         </ul>
       </div>
     </div>

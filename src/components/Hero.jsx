@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroStoryboardAnimated from './HeroStoryboardAnimated';
 
 const Hero = ({ onLeadClick }) => (
   <section id="hero" style={{
@@ -21,14 +22,15 @@ const Hero = ({ onLeadClick }) => (
       }}>
         {/* Lado izquierdo: texto */}
         <div style={{flex:'1 1 350px', minWidth:280, maxWidth:540, textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center'}}>
-          <h1 style={{fontSize:'2.7em', marginBottom:'0.6em', fontWeight:800, letterSpacing:'-1px', color:'#fff', lineHeight:1.11}}>CheekUS: Tecnología para tu auto, tranquilidad para vos</h1>
+          <h1 style={{fontSize:'2.7em', marginBottom:'0.6em', fontWeight:800, letterSpacing:'-1px', color:'#fff', lineHeight:1.11}}>Hey Jack!: Tecnología para tu auto, tranquilidad para vos</h1>
 
           <div className="decorative-line" style={{margin:'2em 0',maxWidth:220}}></div>
 <button onClick={typeof onLeadClick === 'function' ? onLeadClick : undefined} style={{marginTop:'1.5em',background:'var(--primary)',color:'#fff',padding:'0.9em 2em',border:'none',borderRadius:10,fontWeight:700,fontSize:'1.15em',cursor:'pointer',boxShadow:'0 2px 8px #1746a233'}}>Quiero saber más...</button>
         </div>
         {/* Lado derecho: gráfico visual Storyset */}
         <div style={{flex:'1 1 350px', minWidth:260, display:'flex',justifyContent:'center',alignItems:'center',padding:'1.2em 0'}}>
-          <img src="/StockCake-Red neuronal de automóviles_1745621545.jpg" alt="Auto inteligente CheekUS" style={{width:'92%',maxWidth:320,minWidth:160,height:'auto',borderRadius:16,boxShadow:'0 2px 18px #1e293b55',objectFit:'cover',background:'#111'}} />
+          {/* Animación tipo video explicativo de Hey Jack! */}
+          <HeroStoryboardAnimated />
         </div>
       </div>
     </div>

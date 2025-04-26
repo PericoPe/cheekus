@@ -9,7 +9,7 @@ const testimonios = [
   },
   {
     nombre: 'Lucas P.',
-    texto: 'Instalé CheekUS en mi flota y ahora tengo reportes y alertas automáticas, ¡me ahorró multas y dolores de cabeza!',
+    texto: 'Instalé Hey Jack! en mi flota y ahora tengo reportes y alertas automáticas, ¡me ahorró multas y dolores de cabeza!',
     imagen: 'https://randomuser.me/api/portraits/men/44.jpg',
     ciudad: 'La Plata'
   },

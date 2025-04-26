@@ -20,19 +20,14 @@ const NavBar = () => (
       justifyContent: 'space-between',
       padding: '0 1.5em',
     }}>
-      <a href="/#hero" onClick={e => {
-        e.preventDefault();
-        window.location.hash = '#hero';
-        document.getElementById('hero')?.scrollIntoView({behavior:'smooth'});
-      }} style={{textDecoration:'none'}}>
-        <span style={{fontWeight:900, fontSize:'2em', color:'var(--primary)', letterSpacing:'-2px', fontFamily:'Montserrat, Arial, sans-serif'}}>CheekUS</span>
-      </a>
-      <div style={{display: 'flex', gap: '2em'}}>
-        <a href="#caracteristicas" style={{color:'var(--text)', fontWeight:600, fontSize:'1.05em'}}>Características</a>
-        <a href="#proceso" style={{color:'var(--text)', fontWeight:600, fontSize:'1.05em'}}>Cómo funciona</a>
-        <a href="#testimonios" style={{color:'var(--text)', fontWeight:600, fontSize:'1.05em'}}>Testimonios</a>
-        <a href="#precios" style={{color:'var(--text)', fontWeight:600, fontSize:'1.05em'}}>Precios</a>
-        <a href="#contacto" style={{color:'var(--text)', fontWeight:600, fontSize:'1.05em'}}>Contactanos</a>
+      <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <a href="/#hero" onClick={e => {
+          e.preventDefault();
+          window.location.hash = '#hero';
+          document.getElementById('hero')?.scrollIntoView({behavior:'smooth'});
+        }} style={{textDecoration:'none', margin:'0 auto'}}>
+          <span style={{fontWeight:900, fontSize:'2em', color:'var(--primary)', letterSpacing:'-2px', fontFamily:'Montserrat, Arial, sans-serif', display:'block', textAlign:'center'}}>Hey Jack!</span>
+        </a>
       </div>
     </div>
   </nav>

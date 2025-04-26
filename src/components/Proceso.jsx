@@ -5,7 +5,7 @@ const pasos = [
   {
     icon: <FaTools color="#21e6c1" size={32} />,
     titulo: 'Diagnóstico inicial',
-    desc: 'Traé tu vehículo a CheekUS Lab para un chequeo digital completo. Recibí un reporte detallado del estado de tu auto.'
+    desc: 'Traé tu vehículo a Hey Jack! Lab para un chequeo digital completo. Recibí un reporte detallado del estado de tu auto.'
   },
   {
     icon: <FaMicrochip color="#21e6c1" size={32} />,
@@ -14,7 +14,7 @@ const pasos = [
   },
   {
     icon: <FaRobot color="#21e6c1" size={32} />,
-    titulo: 'Bot CheekUS conectado',
+    titulo: 'Bot Hey Jack! conectado',
     desc: 'El bot monitorea tu auto, te envía alertas, recordatorios y recomendaciones personalizadas.'
   },
   {
@@ -26,7 +26,7 @@ const pasos = [
 
 const Proceso = () => (
   <section id="proceso" className="section-bg" style={{textAlign:'center', background: 'linear-gradient(120deg, #e0f7fa 0%, #f8fafc 100%)', paddingBottom: '3em'}}>
-    <h2 style={{color:'var(--primary)', fontWeight:800}}>¿Cómo funciona CheekUS?</h2>
+    <h2 style={{color:'var(--primary)', fontWeight:800}}>¿Cómo funciona Hey Jack!?</h2>
     <div style={{color:'#1746a2', fontWeight:600, marginTop:'.5em', marginBottom:'1.5em', fontSize:'1.1em'}}>Un proceso simple, seguro y 100% digital</div>
     <div className="decorative-line" style={{maxWidth:320, margin:'1.5em auto'}}></div>
     <div className="proceso-timeline" style={{

@@ -5,7 +5,7 @@ const Cookies = () => (
     <section id="cookies" className="section-bg" style={{marginTop:'2em', maxWidth:800, margin:'2em auto', padding:'2em 1em', color:'#1e293b', background:'#eaf6ff', borderRadius:14, boxShadow:'0 2px 18px #1a47e620'}}>
       <h2 style={{color:'var(--primary)', fontWeight:800}}>Política de Cookies</h2>
       <div className="decorative-line" style={{maxWidth:320, margin:'1.5em auto'}}></div>
-      <p>En CheekUS usamos cookies para mejorar tu experiencia. Te explicamos cómo y por qué:</p>
+      <p>En Hey Jack! usamos cookies para mejorar tu experiencia. Te explicamos cómo y por qué:</p>
       <h3 style={{color:'#1a47e6', marginTop:'1.5em'}}>¿Qué son las cookies?</h3>
       <ul style={{marginTop:'0.7em', textAlign:'left'}}>
         <li>Archivos pequeños que se guardan en tu dispositivo.</li>
@@ -32,7 +32,7 @@ const Cookies = () => (
       <h3 style={{color:'#1a47e6', marginTop:'1.5em'}}>2. ¿Qué tipos de cookies usamos?</h3>
       <ul style={{marginTop:'0.7em', textAlign:'left', fontSize:'1.08em'}}>
         <li>Cookies técnicas: necesarias para el funcionamiento básico del sitio.</li>
-        <li>Cookies de análisis: nos ayudan a entender cómo usás CheekUS y optimizar el servicio.</li>
+        <li>Cookies de análisis: nos ayudan a entender cómo usás Hey Jack! y optimizar el servicio.</li>
         <li>Cookies de personalización: recuerdan tus preferencias.</li>
         <li>Permiten recordar tus preferencias y facilitar la navegación.</li>
       </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const numero = '5491133445566'; // Cambiar por el número real de CheekUS
-const mensaje = encodeURIComponent('Hola, quiero más información sobre CheekUS');
+const numero = '5491133445566'; // Cambiar por el número real de Hey Jack!
+const mensaje = encodeURIComponent('Hola, quiero más información sobre Hey Jack!');
 
 const WhatsAppButton = () => (
   <a href={`https://wa.me/${numero}?text=${mensaje}`} target="_blank" rel="noopener noreferrer" style={{

@@ -10,7 +10,7 @@ const Footer = ({ onShowLegales, onShowPrivacidad, onShowTerminos, onShowCookies
         <button onClick={onShowLegales} style={{color:'#21e6c1', margin:'0 0.7em', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>Legales</button>
         <button onClick={onShowFAQs} style={{color:'#21e6c1', margin:'0 0.7em', fontWeight:600, background:'none', border:'none', cursor:'pointer'}}>FAQs</button>
       </div>
-      <div style={{fontSize:'0.98em', color:'#7dd3fc'}}> {new Date().getFullYear()} CheekUS. Todos los derechos reservados.</div>
+      <div style={{fontSize:'0.98em', color:'#7dd3fc'}}> {new Date().getFullYear()} Hey Jack!. Todos los derechos reservados.</div>
     </div>
   </footer>
 );
