@@ -34,33 +34,48 @@ const testimonios = [
   }
 ];
 
-const CARDS_PER_ROW = 4;
+const getCardsPerRow = () => (window.innerWidth <= 600 ? 2 : 4);
 
 const Testimonios = () => {
-  // Estado: testimonios a mostrar en cada card
+  const [cardsPerRow, setCardsPerRow] = useState(getCardsPerRow());
   const [indices, setIndices] = useState([0, 1, 2, 3]);
-  const [flippingIndex, setFlippingIndex] = useState(-1); // -1 = ninguna
+  const [flippingIndex, setFlippingIndex] = useState(-1);
   const total = testimonios.length;
 
+  // Ajustar cantidad de cards por fila según ancho
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFlippingIndex((prev) => (prev + 1) % CARDS_PER_ROW);
-    }, 4000);
-    return () => clearInterval(interval);
+    const onResize = () => {
+      setCardsPerRow(getCardsPerRow());
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  // Inicializar indices según cardsPerRow
+  useEffect(() => {
+    setIndices(Array.from({length: cardsPerRow}, (_, i) => i));
+  }, [cardsPerRow]);
+
+  // Rotación automática
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlippingIndex((prev) => (prev + 1) % cardsPerRow);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [cardsPerRow]);
+
+  // Avanzar sólo las cards visibles
   useEffect(() => {
     if (flippingIndex === -1) return;
     const timeout = setTimeout(() => {
       setIndices((prev) => {
         const newIndices = [...prev];
-        // Avanzar solo la card que está girando
-        newIndices[flippingIndex] = (newIndices[flippingIndex] + CARDS_PER_ROW) % total;
+        newIndices[flippingIndex] = (newIndices[flippingIndex] + cardsPerRow) % total;
         return newIndices;
       });
-    }, 700); // duración del flip
+    }, 700);
     return () => clearTimeout(timeout);
-  }, [flippingIndex, total]);
+  }, [flippingIndex, cardsPerRow, total]);
 
   return (
     <section id="testimonios" className={styles.testimoniosSection}>
