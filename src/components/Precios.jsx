@@ -7,7 +7,7 @@ const Precios = () => (
     <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'2em', marginTop:'2em'}}>
       <div style={{background:'#172554', borderRadius:16, padding:'2.5em 1.8em', minWidth:240, maxWidth:330, boxShadow:'0 2px 16px #2563eb22', display:'flex', flexDirection:'column', alignItems:'center'}}>
         <h3 style={{color:'#38bdf8', marginBottom:'0.7em'}}>Setup (Instalación)</h3>
-        <div style={{fontSize:'2.3em', color:'#60a5fa', fontWeight:800, marginBottom:'.2em'}}>$29.900</div>
+        <div style={{fontSize:'2.3em', color:'#60a5fa', fontWeight:800, marginBottom:'.2em'}}>Consultar</div>
         <div style={{color:'#dbeafe', fontSize:'1.1em', marginBottom:'1em'}}>Pago único</div>
         <ul style={{listStyle:'none', padding:0, color:'#b3cfff', textAlign:'left'}}>
           <li>✔️ Diagnóstico digital</li>
@@ -17,7 +17,7 @@ const Precios = () => (
       </div>
       <div style={{background:'#172554', borderRadius:16, padding:'2.5em 1.8em', minWidth:240, maxWidth:330, boxShadow:'0 2px 16px #2563eb22', display:'flex', flexDirection:'column', alignItems:'center'}}>
         <h3 style={{color:'#38bdf8', marginBottom:'0.7em'}}>Abono mensual</h3>
-        <div style={{fontSize:'2.3em', color:'#60a5fa', fontWeight:800, marginBottom:'.2em'}}>$3.900</div>
+        <div style={{fontSize:'2.3em', color:'#60a5fa', fontWeight:800, marginBottom:'.2em'}}>$35.000</div>
         <div style={{color:'#dbeafe', fontSize:'1.1em', marginBottom:'1em'}}>Por vehículo</div>
         <ul style={{listStyle:'none', padding:0, color:'#b3cfff', textAlign:'left'}}>
           <li>✔️ Soporte 24/7</li>
