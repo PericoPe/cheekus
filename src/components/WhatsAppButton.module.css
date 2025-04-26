@@ -1,0 +1,36 @@
+.whatsappBtn {
+  position: fixed;
+  bottom: 4vw;
+  right: 2vw;
+  background: #21e6c1;
+  color: #fff;
+  border-radius: 50%;
+  width: 15vw;
+  height: 15vw;
+  min-width: 46px;
+  min-height: 46px;
+  max-width: 64px;
+  max-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px #1746a288;
+  font-size: 1.5em;
+  z-index: 9999;
+  text-decoration: none;
+  border: none;
+  transition: box-shadow .2s;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 601px) {
+  .whatsappBtn {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+  }
+}
