@@ -34,9 +34,6 @@ const testimonios = [
   }
 ];
 
-import React, { useState, useEffect } from 'react';
-import styles from "./Testimonios.module.css";
-
 const isMobile = () => window.innerWidth <= 600;
 
 const Testimonios = () => {
