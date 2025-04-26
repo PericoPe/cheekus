@@ -53,7 +53,7 @@ const LeadForm = ({ onSuccess }) => {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setError('');
     if (!form.nombre || !form.email || !form.telefono || !form.marca || !form.modelo || !form.anio) {
@@ -61,12 +61,34 @@ const LeadForm = ({ onSuccess }) => {
       return;
     }
     setEnviado(true);
-    setTimeout(() => {
-      setEnviado(false);
-      setForm({ nombre: '', email: '', telefono: '', marca: '', modelo: '', anio: '', comentario: '' });
+    try {
+      const response = await fetch('https://sheetdb.io/api/v1/tqa5szmyhgjuw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: {
+            fecha: new Date().toLocaleString('es-AR'),
+            nombre: form.nombre,
+            email: form.email,
+            telefono: form.telefono,
+            marca: form.marca,
+            modelo: form.modelo,
+            anio: form.anio,
+            provincia: form.provincia,
+            CNC: form.como, // Asegúrate que el nombre de columna es CNC en SheetDB
+            comentario: form.comentario
+          }
+        })
+      });
+      if (!response.ok) throw new Error('No se pudo enviar el formulario.');
+      setForm({ nombre: '', email: '', telefono: '', marca: '', modelo: '', anio: '', provincia: '', como: '', comentario: '' });
       if (onSuccess) onSuccess();
-    }, 1600);
+    } catch (err) {
+      setError('Ocurrió un error al enviar tus datos. Intentalo de nuevo.');
+      setEnviado(false);
+    }
   };
+
 
   if (enviado) return (
     <div style={{padding:'2em',textAlign:'center'}}>
@@ -79,15 +101,62 @@ const LeadForm = ({ onSuccess }) => {
     <form onSubmit={handleSubmit} style={{maxWidth:420,margin:'0 auto',background:'#f8fafc',borderRadius:16,padding:'2em 1.5em',boxShadow:'0 2px 18px #1e293b22'}}>
       <h3 style={{color:'var(--primary)',fontWeight:800,marginBottom:'1em'}}>Dejanos tu contacto</h3>
       <div style={{display:'flex',flexDirection:'column',gap:'1em'}}>
-        <input name="nombre" value={form.nombre} onChange={handleChange} placeholder="Nombre y apellido" style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} required />
-        <input name="email" value={form.email} onChange={handleChange} placeholder="Email" type="email" style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} required />
-        <input name="telefono" value={form.telefono} onChange={handleChange} placeholder="Teléfono" style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} required />
-        <input name="provincia" value={form.provincia} onChange={handleChange} placeholder="Provincia / Localidad" style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} />
-        <select name="marca" value={form.marca} onChange={handleChange} style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} required>
+        <input
+          type="text"
+          name="nombre"
+          value={form.nombre}
+          onChange={handleChange}
+          placeholder="Nombre y apellido"
+          required
+          autoComplete="name"
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+        />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Email"
+          required
+          autoComplete="email"
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+        />
+        <input
+          type="tel"
+          name="telefono"
+          value={form.telefono}
+          onChange={handleChange}
+          placeholder="Teléfono"
+          required
+          autoComplete="tel"
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+        />
+        <input
+          type="text"
+          name="provincia"
+          value={form.provincia}
+          onChange={handleChange}
+          placeholder="Provincia / Localidad"
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+        />
+        <select
+          name="marca"
+          value={form.marca}
+          onChange={handleChange}
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+          required
+        >
           <option value="">Marca de auto</option>
           {MARCAS.map(m => <option key={m} value={m}>{m}</option>)}
         </select>
-        <select name="modelo" value={form.modelo} onChange={handleChange} style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}} required disabled={!form.marca}>
+        <select
+          name="modelo"
+          value={form.modelo}
+          onChange={handleChange}
+          style={{padding:10,borderRadius:8,border:'1px solid #cbd5e1'}}
+          required
+          disabled={!form.marca}
+        >
           <option value="">Modelo</option>
           {form.marca && MODELOS_POR_MARCA[form.marca].map(m => <option key={m} value={m}>{m}</option>)}
         </select>

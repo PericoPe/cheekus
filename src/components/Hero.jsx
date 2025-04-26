@@ -20,7 +20,7 @@ const Hero = ({ onLeadClick }) => (
         flexWrap:'wrap',
       }}>
         {/* Lado izquierdo: texto */}
-        <div style={{flex:'1 1 350px', minWidth:280, maxWidth:540, textAlign:'left'}}>
+        <div style={{flex:'1 1 350px', minWidth:280, maxWidth:540, textAlign:'center', display:'flex', flexDirection:'column', alignItems:'center'}}>
           <h1 style={{fontSize:'2.7em', marginBottom:'0.6em', fontWeight:800, letterSpacing:'-1px', color:'#fff', lineHeight:1.11}}>CheekUS: Tecnología para tu auto, tranquilidad para vos</h1>
 
           <div className="decorative-line" style={{margin:'2em 0',maxWidth:220}}></div>
