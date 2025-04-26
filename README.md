@@ -11,7 +11,7 @@ Landing page en español para el servicio CheekUS.
 - Beneficios
 - Precios (setup y abono)
 - Proceso
-- Formulario de contacto
+- Formulario de contacto (leads)
 - Botón de WhatsApp
 
 ## Instalación y uso
