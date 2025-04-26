@@ -62,15 +62,15 @@ const Testimonios = () => {
   }, [flippingIndex, total]);
 
   return (
-    <section id="testimonios" className="section-bg" style={{textAlign:'center', marginBottom:'4em', overflow:'visible', paddingBottom:'2em'}}>
+    <section id="testimonios" className={styles.testimoniosSection}>
       <h2 style={{color:'var(--primary)', fontWeight:800}}>Testimonios</h2>
       <div className="decorative-line" style={{maxWidth:320, margin:'1.5em auto'}}></div>
-      <div style={{display:'flex', justifyContent:'center', margin:'2em 0', gap:'2.7em', flexWrap:'nowrap', overflow:'visible'}}>
+      <div className={styles.cardsRow}>
         {indices.map((testiIdx, i) => {
           const t = testimonios[testiIdx % total];
           const isFlipping = flippingIndex === i;
           return (
-            <div key={i} className={`flip-card${isFlipping ? ' flipping' : ''}`} style={{perspective:'900px', minWidth:180, maxWidth:220, flex:'1 1 0', transition:'transform 0.7s', transformStyle:'preserve-3d'}}>
+            <div key={i} className={`${styles.card} flip-card${isFlipping ? ' flipping' : ''}`} style={{perspective:'900px', transition:'transform 0.7s', transformStyle:'preserve-3d'}}>
               <div className="flip-card-inner" style={{transition:'transform 0.7s', transformStyle:'preserve-3d', transform: isFlipping ? 'rotateY(180deg)' : 'none'}}>
                 <div className="flip-card-front" style={{background:'#192a3c', borderRadius:16, boxShadow:'0 2px 18px #1e293b33', padding:'0.7em', minHeight:220, display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center', backfaceVisibility:'hidden'}}>
                   <img src={t.imagen} alt={t.nombre} style={{width:44, height:44, borderRadius:'50%', marginBottom:'0.7em',objectFit:'cover',border:'2px solid #4ad4ff'}} />
