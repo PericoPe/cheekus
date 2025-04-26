@@ -34,32 +34,17 @@ const testimonios = [
   }
 ];
 
-const getCardsPerRow = () => (window.innerWidth <= 600 ? 2 : 4);
-
 const Testimonios = () => {
-  const [cardsPerRow, setCardsPerRow] = useState(getCardsPerRow());
-
-  useEffect(() => {
-    const onResize = () => {
-      setCardsPerRow(getCardsPerRow());
-    };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
-
-  // Agrupa testimonios en filas de cardsPerRow
-  const filas = [];
-  for (let i = 0; i < testimonios.length; i += cardsPerRow) {
-    filas.push(testimonios.slice(i, i + cardsPerRow));
-  }
+  // Duplicamos los testimonios para loop infinito visual
+  const testimoniosLoop = [...testimonios, ...testimonios];
 
   return (
     <section id="testimonios" className={styles.testimoniosSection}>
       <h2 style={{color:'var(--primary)', fontWeight:800}}>Testimonios</h2>
       <div className="decorative-line" style={{maxWidth:320, margin:'1.5em auto'}}></div>
-      {filas.map((fila, filaIdx) => (
-        <div className={styles.cardsRow} key={filaIdx}>
-          {fila.map((t, i) => (
+      <div className={styles.marqueeWrapper}>
+        <div className={styles.marqueeTrack}>
+          {testimoniosLoop.map((t, i) => (
             <div key={i} className={styles.card}>
               <div style={{background:'#192a3c', borderRadius:16, boxShadow:'0 2px 18px #1e293b33', padding:'0.7em', minHeight:220, display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
                 <img src={t.imagen} alt={t.nombre} style={{width:44, height:44, borderRadius:'50%', marginBottom:'0.7em',objectFit:'cover',border:'2px solid #4ad4ff'}} />
@@ -70,7 +55,7 @@ const Testimonios = () => {
             </div>
           ))}
         </div>
-      ))}
+      </div>
     </section>
   );
 };

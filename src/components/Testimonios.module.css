@@ -8,15 +8,47 @@
 }
 
 .cardsRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
+  display: none; /* Ocultamos el viejo layout */
+}
+
+.marqueeWrapper {
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
+  padding: 0.5em 0 1.2em 0;
   box-sizing: border-box;
+  position: relative;
 }
+
+.marqueeTrack {
+  display: flex;
+  gap: 2vw;
+  align-items: stretch;
+  animation: marqueeScroll 20s linear infinite;
+  will-change: transform;
+}
+.marqueeWrapper:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .marqueeTrack {
+    gap: 3vw;
+    animation-duration: 24s;
+  }
+  .card {
+    width: 72vw;
+    max-width: 80vw;
+    min-width: 220px;
+    font-size: 1.05em;
+  }
+}
+
 
 .card {
   background: #fff;
