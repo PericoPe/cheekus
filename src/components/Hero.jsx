@@ -1,5 +1,4 @@
 import React from 'react';
-import HeroHeyJackAnimated from './HeroHeyJackAnimated';
 
 const Hero = ({ onLeadClick }) => (
   <section id="hero" style={{
@@ -29,8 +28,21 @@ const Hero = ({ onLeadClick }) => (
         </div>
         {/* Lado derecho: gráfico visual Storyset */}
         <div style={{flex:'1 1 350px', minWidth:260, display:'flex',justifyContent:'center',alignItems:'center',padding:'1.2em 0'}}>
-          {/* Nueva animación personalizada Hey Jack! */}
-          <HeroHeyJackAnimated />
+          <img 
+            src="/19199285.jpg" 
+            alt="Hey Jack auto tecnología" 
+            style={{
+              width: '100%',
+              maxWidth: 420,
+              height: 'auto',
+              borderRadius: 20,
+              boxShadow: '0 4px 28px #1746a220',
+              background: '#fff',
+              objectFit: 'contain',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
         </div>
       </div>
     </div>
