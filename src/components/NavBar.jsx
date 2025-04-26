@@ -13,36 +13,22 @@ const NavBar = () => (
     backdropFilter: 'blur(6px)'
   }}>
     <div style={{
-      maxWidth: 1200,
-      margin: '0 auto',
+      width: '100vw',
+      margin: 0,
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0 1.5em',
+      justifyContent: 'center',
+      padding: 0,
+      overflow: 'hidden',
     }}>
-      <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center', padding:'0'}}>
-        <a href="/#hero" onClick={e => {
-          e.preventDefault();
-          window.location.hash = '#hero';
-          document.getElementById('hero')?.scrollIntoView({behavior:'smooth'});
-        }} style={{textDecoration:'none', margin:'0 auto', width:'100%'}}>
-          <span style={{fontWeight:900, fontSize:'2em', color:'var(--primary)', letterSpacing:'-2px', fontFamily:'Montserrat, Arial, sans-serif', display:'block', textAlign:'center', width:'100%'}}>Hey Jack!</span>
-        </a>
-        <style>{`
-          @media (max-width: 600px) {
-            nav div {
-              padding: 0 !important;
-            }
-            nav span {
-              font-size: 2.1em !important;
-              text-align: center !important;
-              width: 100vw !important;
-              margin: 0 auto !important;
-              display: block !important;
-            }
-          }
-        `}</style>
-      </div>
+      <a href="/#hero" onClick={e => {
+        e.preventDefault();
+        window.location.hash = '#hero';
+        document.getElementById('hero')?.scrollIntoView({behavior:'smooth'});
+      }} style={{textDecoration:'none', width:'100%', margin:0, display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <span style={{fontWeight:900, fontSize:'2em', color:'var(--primary)', letterSpacing:'-2px', fontFamily:'Montserrat, Arial, sans-serif', display:'block', textAlign:'center', width:'100vw', overflow:'hidden', whiteSpace:'nowrap'}}>Hey Jack!</span>
+      </a>
+    </div>
     </div>
   </nav>
 );

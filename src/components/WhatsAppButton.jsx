@@ -30,11 +30,17 @@ const WhatsAppButton = () => (
     <style>{`
       @media (max-width: 600px) {
         a[aria-label="WhatsApp"] {
-          width: 54px !important;
-          height: 54px !important;
-          bottom: 16px !important;
-          right: 12px !important;
-          font-size: 1.7em !important;
+          width: 15vw !important;
+          height: 15vw !important;
+          min-width: 46px !important;
+          min-height: 46px !important;
+          max-width: 64px !important;
+          max-height: 64px !important;
+          bottom: 4vw !important;
+          right: 2vw !important;
+          font-size: 1.5em !important;
+          box-sizing: border-box !important;
+          margin: 0 !important;
         }
       }
     `}</style>
