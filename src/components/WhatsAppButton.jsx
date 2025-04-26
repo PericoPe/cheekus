@@ -5,23 +5,39 @@ const mensaje = encodeURIComponent('Hola, quiero más información sobre Hey Jac
 
 const WhatsAppButton = () => (
   <a href={`https://wa.me/${numero}?text=${mensaje}`} target="_blank" rel="noopener noreferrer" style={{
-    position: 'fixed',
-    bottom: 24,
-    right: 24,
-    zIndex: 1000,
-    background: 'linear-gradient(135deg, #1de782 60%, #00c9a7 100%)',
-    borderRadius: '50%',
-    width: 64,
-    height: 64,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 2px 12px rgba(0,0,0,0.25)'
-  }} aria-label="WhatsApp">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="none"/>
-      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.522.797 4.86 2.186 6.797L4 29l7.389-2.129A12.94 12.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-2.05 0-3.997-.614-5.627-1.672l-.4-.252-4.389 1.264 1.25-4.267-.26-.413A9.963 9.963 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.207-7.793c-.293-.293-.768-.293-1.061 0l-1.146 1.146c-.293.293-.293.768 0 1.061.293.293.768.293 1.061 0l1.146-1.146c.293-.293.293-.768 0-1.061z" fill="#fff"/>
-    </svg>
+    position:'fixed',
+    bottom:20,
+    right:20,
+    background:'#21e6c1',
+    color:'#fff',
+    borderRadius:'50%',
+    width:60,
+    height:60,
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    boxShadow:'0 2px 12px #1746a288',
+    fontSize:'2em',
+    zIndex:9999,
+    textDecoration:'none',
+    border:'none',
+    transition:'box-shadow .2s',
+    padding:0
+  }}
+    aria-label="WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-1.9 5.4 8.5 8.5 0 1 1-2.6-13.2"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <style>{`
+      @media (max-width: 600px) {
+        a[aria-label="WhatsApp"] {
+          width: 54px !important;
+          height: 54px !important;
+          bottom: 16px !important;
+          right: 12px !important;
+          font-size: 1.7em !important;
+        }
+      }
+    `}</style>
   </a>
 );
 
